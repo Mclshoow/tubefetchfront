@@ -1,5 +1,7 @@
 # Tubefetchfront
 
+Front-end com script de build do projeto tubefetch com API em C#
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 ## Development server
