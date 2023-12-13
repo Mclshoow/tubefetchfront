@@ -17,7 +17,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [
     FormsModule,
@@ -37,11 +37,11 @@ import { AuthService } from '../auth.service';
     MatSlideToggleModule,
     MatSelectModule,
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
 
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   form!: FormGroup;
   public loginInvalid = false;
   private formSubmitAttempt = false;
