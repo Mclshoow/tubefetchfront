@@ -4,34 +4,42 @@
   rel="stylesheet"
 />
 
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Log In</h2>
-      <mat-error *ngIf="loginInvalid">
-        The username and password were not recognised
-      </mat-error>
-      <mat-form-field class="full-width-input">
-        <input
-          matInput
-          placeholder="Email"
-          formControlName="username"
-          required
-        />
-        <mat-error> Please provide a valid email address </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width-input">
-        <input
-          matInput
-          type="password"
-          placeholder="Password"
-          formControlName="password"
-          required
-        />
-        <mat-error> Please provide a valid password </mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
-    </form>
-  </mat-card-content>
-</mat-card>
-<router-outlet></router-outlet>
+<div (click)="onFlipClick()" class="flip-card">
+  <div [@flip]="flipState" class="flip-card-inner">
+    <div class="flip-card-front">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h2>Log In</h2>
+            <mat-error *ngIf="loginInvalid">
+              The username and password were not recognised
+            </mat-error>
+            <mat-form-field class="full-width-input">
+              <input
+                matInput
+                placeholder="Email"
+                formControlName="username"
+                required
+              />
+              <mat-error> Please provide a valid email address </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input
+                matInput
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+                required
+              />
+              <mat-error> Please provide a valid password </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Login</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="flip-card-back">
+      <app-register></app-register>
+    </div>
+  </div>
+</div>

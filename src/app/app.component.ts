@@ -35,7 +35,7 @@ import { AuthService } from './auth.service';
     MatProgressSpinnerModule,
     MatInputModule,
     MatSlideToggleModule,
-    MatSelectModule,
+    MatSelectModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

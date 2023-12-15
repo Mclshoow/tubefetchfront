@@ -15,6 +15,8 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSelectModule } from "@angular/material/select";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AuthService } from '../auth.service';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-login',
@@ -36,9 +38,70 @@ import { AuthService } from '../auth.service';
     MatInputModule,
     MatSlideToggleModule,
     MatSelectModule,
+    RegisterComponent
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  animations: [
+    trigger('flip', [
+      state('front', style({
+        transform: 'rotateY(0deg)'
+      })),
+      state('back', style({
+        transform: 'rotateY(180deg)'
+      })),
+      transition('front => back', [
+        animate('1s 0s ease-out',
+          keyframes([
+            style({
+              transform: 'perspective(400px) rotateY(0deg)',
+              offset: 0
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotateY(80deg)',
+              offset: 0.4
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotateY(100deg)',
+              offset: 0.5
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(0.95, 0.95, 0.95) rotateY(180deg)',
+              offset: 0.8
+            }),
+            style({
+              transform: 'perspective(400px) rotateY(180deg)',
+              offset: 1
+            })
+          ]))
+      ]),
+      transition('back => front', [
+        animate('1s 0s ease-in',
+          keyframes([
+            style({
+              transform: 'perspective(400px) rotateY(180deg)',
+              offset: 0
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotateY(100deg)',
+              offset: 0.4
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(1.5, 1.5, 1.5) rotateY(80deg)',
+              offset: 0.5
+            }),
+            style({
+              transform: 'perspective(400px) scale3d(0.95, 0.95, 0.95) rotateY(0deg)',
+              offset: 0.8
+            }),
+            style({
+              transform: 'perspective(400px) rotateY(0deg)',
+              offset: 1
+            })
+          ]))
+      ])
+    ])
+  ]
 })
 
 export class LoginComponent implements OnInit {
@@ -46,6 +109,7 @@ export class LoginComponent implements OnInit {
   public loginInvalid = false;
   private formSubmitAttempt = false;
   private returnUrl = "";
+  flipState = 'front';
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -82,6 +146,14 @@ export class LoginComponent implements OnInit {
       }
     } else {
       this.formSubmitAttempt = true;
+    }
+  }
+
+  onFlipClick() {
+    if (this.flipState == 'front') {
+      this.flipState = 'back';
+    } else {
+      this.flipState = 'front';
     }
   }
 }

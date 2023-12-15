@@ -3,11 +3,12 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { NgModule } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: HomeComponent
   },
   {
     path: 'login',
@@ -17,7 +18,7 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     //canActivate: [AuthGuardService]
-  },
+  }
 ];
 
 @NgModule({
