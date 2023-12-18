@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve ",
+      "name": "ng serve",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "npm: serve",
       "url": "http://[::1]:4200/",
       "webRoot": "${workspaceFolder}",
       "sourceMaps": true,

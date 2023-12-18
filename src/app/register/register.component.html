@@ -7,9 +7,9 @@
 <mat-card>
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Register</h2>
-      <mat-error *ngIf="loginInvalid">
-        The username and password were not recognised
+      <h2 class="title">Register</h2>
+      <mat-error *ngIf="registerInvalid">
+        The username and password were not register
       </mat-error>
       <mat-form-field class="full-width-input">
         <input
@@ -30,8 +30,29 @@
         />
         <mat-error> Please provide a valid password </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
+      <mat-form-field class="full-width-input">
+        <input
+          matInput
+          maxlength="15"
+          placeholder="Phone number"
+          [(ngModel)]="phonenumber"
+          (input)="formatarTelefone($event)"
+          formControlName="phonenumber"
+          required
+        />
+        <mat-error> Please provide a valid number </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input
+          matInput
+          type="cpf"
+          placeholder="CPF"
+          formControlName="cpf"
+          required
+        />
+        <mat-error> Please provide a valid CPF </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Register</button>
     </form>
   </mat-card-content>
 </mat-card>
-<router-outlet></router-outlet>

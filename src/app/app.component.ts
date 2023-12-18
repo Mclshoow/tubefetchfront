@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
   redirectTo(route: string): void {
-    this.router.navigateByUrl(route);
+    this.router.navigate([route]);
   }
   logout() {
     this.authService.logout('/');

@@ -21,6 +21,7 @@ mat-form-field {
   width: 100%;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
 }
 
 .flip-card-inner > div {
@@ -30,11 +31,18 @@ mat-form-field {
   backface-visibility: hidden;
 }
 
-.flip-card-front {
-  background-color: rgb(103, 103, 253);
-}
-
 .flip-card-back {
   transform: rotateY(180deg);
-  background-color: green;
+}
+
+.flip-card-button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  box-shadow: none;
+  justify-content: right;
+}
+
+.title {
+  color: white;
 }

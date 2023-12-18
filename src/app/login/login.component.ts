@@ -110,6 +110,7 @@ export class LoginComponent implements OnInit {
   private formSubmitAttempt = false;
   private returnUrl = "";
   flipState = 'front';
+  public cardFlipped = false;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -150,6 +151,7 @@ export class LoginComponent implements OnInit {
   }
 
   onFlipClick() {
+    this.cardFlipped = true;
     if (this.flipState == 'front') {
       this.flipState = 'back';
     } else {
