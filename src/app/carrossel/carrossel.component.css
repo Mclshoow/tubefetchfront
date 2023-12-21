@@ -1,58 +1,48 @@
-/* Reset de estilos para garantir uma base consistente */
-body,
-h1,
-h2,
-h3,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos do cabeçalho */
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Estilos para a seção principal com os filmes/séries */
-main {
-  padding: 20px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.movie-card {
-  background-color: #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-}
-
-.movie-card img {
+.carousel-container {
+  position: relative;
   width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.carousel-item {
+  display: none;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  overflow: hidden; /* Oculta qualquer parte da imagem que ultrapasse o container */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Efeito de aumento ao passar o mouse sobre a imagem */
+.carousel-item img:hover {
+  transform: scale(1.05);
 }
