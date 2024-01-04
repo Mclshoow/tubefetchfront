@@ -15,6 +15,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSelectModule } from "@angular/material/select";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +36,8 @@ import { AuthService } from './auth.service';
     MatProgressSpinnerModule,
     MatInputModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

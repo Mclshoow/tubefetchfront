@@ -12,6 +12,9 @@
     </button>
   </span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button (click)="redirectTo('/tarefa')">
+      <mat-icon>description</mat-icon>
+    </button>
     <button mat-button (click)="redirectTo('/login')" *ngIf="!isAuthenticated">
       <mat-icon>power_settings_new</mat-icon>
       Login
