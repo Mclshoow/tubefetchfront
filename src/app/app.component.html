@@ -14,6 +14,7 @@
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
     <button mat-button (click)="redirectTo('/tarefa')">
       <mat-icon>description</mat-icon>
+      Tarefa
     </button>
     <button mat-button (click)="redirectTo('/login')" *ngIf="!isAuthenticated">
       <mat-icon>power_settings_new</mat-icon>
@@ -29,9 +30,13 @@
   </button>
 </mat-toolbar>
 <mat-menu x-position="before" #menu="matMenu">
-  <button mat-menu-item (click)="redirectTo('/')">
+  <button mat-menu-item (click)="redirectTo('/home')">
     <mat-icon>home</mat-icon>
     Home
+  </button>
+  <button mat-menu-item (click)="redirectTo('/tarefa')">
+    <mat-icon>description</mat-icon>
+    Tarefa
   </button>
   <button mat-menu-item (click)="redirectTo('/login')" *ngIf="!isAuthenticated">
     <mat-icon>power_settings_new</mat-icon>

@@ -16,6 +16,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiModule } from './api/api.module';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSlideToggleModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    ApiModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

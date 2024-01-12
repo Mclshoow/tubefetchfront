@@ -25,14 +25,7 @@ export class TarefaComponent {
       password: ['', Validators.required]
     });
 
-    this.apiService.getDadosApi().subscribe((data) => {
-      this.dadosApi = data;
-      console.log('Dados da API:', this.dadosApi);
-    },
-      (error) => {
-        console.error('Erro ao buscar dados da API:', error);
-      }
-    );
+    this.chamarApi();
   }
 
   async onSubmit() {
@@ -47,13 +40,23 @@ export class TarefaComponent {
           const username = usernameControl.value;
           const password = passwordControl.value;
 
-          //await this.apiService(username, password);
+          // chamar api
         }
       } catch (err) {
         this.loginInvalid = true;
       }
     } else {
       this.formSubmitAttempt = true;
+    }
+  }
+
+  async chamarApi() {
+    try {
+      let dados = await this.apiService.getDadosApi();
+      console.log(dados);
+    }
+    catch (error) {
+      console.log("F");
     }
   }
 }

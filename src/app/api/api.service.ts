@@ -6,13 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://127.0.0.1:5001';
+  private apiUrl = 'https://localhost:5001';
 
   constructor(private http: HttpClient) { }
 
-  getDadosApi(): Observable<any> {
+  getDadosApi(): Promise<any> {
     console.log("passei aqui");
-    return this.http.get<any>(`${this.apiUrl}/v1/todos`);
+    return new Promise((resolve, reject) => {
+      this.http.get<any>(`${this.apiUrl}/v1/todos`).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error) => {
+          console.error('Erro na chamada da API:', error);
+          reject(error); // Você pode manipular o erro de acordo com suas necessidades
+        }
+      );
+    });
   }
 }
 

@@ -43,9 +43,9 @@ export class CarrosselComponent {
     this.mostrarImagem(this.slideIndex += n);
   }
 
-  mostrarImagem(n: number) {
+  async mostrarImagem(n: number) {
     let i;
-    const slides = document.getElementsByClassName('carousel-item') as HTMLCollectionOf<HTMLElement>;
+    const slides = await document.getElementsByClassName('carousel-item') as HTMLCollectionOf<HTMLElement>;
 
     if (n > slides.length) { this.slideIndex = 1; }
     if (n < 1) { this.slideIndex = slides.length; }
