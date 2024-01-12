@@ -4,10 +4,47 @@
   rel="stylesheet"
 />
 
-<div>
-  <ul>
-    <li *ngFor="let item of dadosApi">
-      {{ item.nome }}
-    </li>
-  </ul>
+<div class="formulario">
+  <nz-card class="nz-card" [nzBordered]="false" [nzHoverable]="true">
+    <form
+      nz-form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      nzCard
+      class="nz-form"
+    >
+      <nz-form-item class="nz-form-item">
+        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
+          >Nome</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" class="nz-form-control">
+          <input nz-input formControlName="name" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="nz-form-item">
+        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
+          >E-mail</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" class="nz-form-control">
+          <input nz-input formControlName="email" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="nz-form-item">
+        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
+          >Senha</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" class="nz-form-control">
+          <input nz-input type="password" formControlName="password" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="nz-form-item">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6" class="nz-form-control">
+          <button nz-button nzType="primary" type="submit">Enviar</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-card>
 </div>

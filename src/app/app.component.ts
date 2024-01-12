@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -17,6 +17,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiModule } from './api/api.module';
+import { NzI18nModule } from 'ng-zorro-antd/i18n';
 
 @Component({
   selector: 'app-root',
@@ -39,10 +40,11 @@ import { ApiModule } from './api/api.module';
     MatSlideToggleModule,
     MatSelectModule,
     HttpClientModule,
-    ApiModule
+    ApiModule,
+    NzI18nModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 
 export class AppComponent {

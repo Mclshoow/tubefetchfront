@@ -1,15 +1,22 @@
 import { ApiService } from './../api/api.service';
 import { Component } from '@angular/core';
 import { ApiModule } from '../api/api.module';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
   selector: 'app-tarefa',
   standalone: true,
-  imports: [ApiModule, CommonModule],
+  imports: [ApiModule,
+    CommonModule,
+    ReactiveFormsModule,
+    NzFormModule,
+    NzCardModule,
+  ],
   templateUrl: './tarefa.component.html',
-  styleUrl: './tarefa.component.css'
+  styleUrl: './tarefa.component.css',
 })
 export class TarefaComponent {
   dadosApi: any[] = [];

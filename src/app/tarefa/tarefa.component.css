@@ -1,0 +1,40 @@
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.nz-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+nz-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+nz-form-item {
+  margin-bottom: 16px;
+}
+
+nz-form-label {
+  font-weight: bold;
+}
+
+nz-form-control {
+  width: 100%;
+}
+
+nz-button {
+  width: 100%;
+  margin-top: 16px;
+  box-shadow: none;
+}

@@ -1,27 +1,30 @@
 mat-card {
   max-width: 400px;
-  margin: 2em auto;
+  margin: 10em auto; /* Ajuste aqui para centralizar verticalmente */
   text-align: center;
 }
+
 mat-form-field {
   display: block;
 }
+
 .flip-card {
   height: 320px;
   width: 380px;
   background-color: transparent;
-  margin-top: 250px;
+  margin-top: 0; /* Remova a margem superior */
   margin-left: auto;
   margin-right: auto;
 }
 
 .flip-card-inner {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
 }
 
 .flip-card-inner > div {
