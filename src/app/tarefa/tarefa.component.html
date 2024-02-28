@@ -4,47 +4,46 @@
   rel="stylesheet"
 />
 
-<div class="formulario">
-  <nz-card class="nz-card" [nzBordered]="false" [nzHoverable]="true">
-    <form
-      nz-form
-      [formGroup]="form"
-      (ngSubmit)="onSubmit()"
-      nzCard
-      class="nz-form"
-    >
-      <nz-form-item class="nz-form-item">
-        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
-          >Nome</nz-form-label
-        >
-        <nz-form-control [nzSm]="14" class="nz-form-control">
-          <input nz-input formControlName="name" />
-        </nz-form-control>
-      </nz-form-item>
-
-      <nz-form-item class="nz-form-item">
-        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
-          >E-mail</nz-form-label
-        >
-        <nz-form-control [nzSm]="14" class="nz-form-control">
-          <input nz-input formControlName="email" />
-        </nz-form-control>
-      </nz-form-item>
-
-      <nz-form-item class="nz-form-item">
-        <nz-form-label [nzSm]="6" nzRequired class="nz-form-label"
-          >Senha</nz-form-label
-        >
-        <nz-form-control [nzSm]="14" class="nz-form-control">
-          <input nz-input type="password" formControlName="password" />
-        </nz-form-control>
-      </nz-form-item>
-
-      <nz-form-item class="nz-form-item">
-        <nz-form-control [nzSpan]="14" [nzOffset]="6" class="nz-form-control">
-          <button nz-button nzType="primary" type="submit">Enviar</button>
-        </nz-form-control>
-      </nz-form-item>
-    </form>
-  </nz-card>
+<div>
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h2 class="title">Tarefa</h2>
+            <mat-form-field class="full-width-input">
+              <input
+                matInput
+                placeholder="Name"
+                formControlName="name"
+                required
+              />
+              <mat-error> Please provide a valid name </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input
+                matInput
+                placeholder="Email"
+                formControlName="email"
+                required
+              />
+              <mat-error> Please provide a valid email address</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input
+                matInput
+                placeholder="Tarefa"
+                formControlName="title"
+                required
+              />
+              <mat-error> Please provide a task </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="onSubmit()">
+              Create Todo
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>

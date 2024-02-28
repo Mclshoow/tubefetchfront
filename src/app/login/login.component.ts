@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
   async ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/register';
     this.form = this.fb.group({
-      username: ['', Validators.email],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     });
     if (await this.authService.checkAuthenticated()) {
